@@ -7,7 +7,7 @@ def parse(addresses, cut=False):
     result = []
     df = taiwanaddressparser.transform(addresses, cut=cut)
 
-    for map_key in zip(df["省"], df["市"], df["区"], df["地址"]):
+    for map_key in zip(df["省"], df["市"], df["區"], df["地址"]):
         place = map_key[3]
         if not isinstance(place, str):
             place = ''
