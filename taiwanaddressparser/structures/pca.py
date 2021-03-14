@@ -1,15 +1,19 @@
 class Pca(object):
-    def __init__(self, province='', province_pos=-1):
+    def __init__(self, province='', city='', province_pos=-1, city_pos=-1):
         self.province = province
+        self.city = city
         self.province_pos = province_pos
+        self.city_pos = city_pos
 
     def propertys_dict(self, pos_sensitive):
         result = {
             "省": self.province,
+            "市": self.city
         }
 
         if pos_sensitive:
             result["省_pos"] = self.province_pos
+            result["市_pos"] = self.city_pos
 
         return result
 
