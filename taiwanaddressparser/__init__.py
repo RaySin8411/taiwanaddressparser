@@ -3,7 +3,7 @@ import pandas as pd
 
 from .structures import AddrMap, Pca
 
-__version__ = "0.0.3"
+__version__ = "0.0.5"
 P, C, R = 0, 1, 2
 pwd_path = os.path.abspath(os.path.dirname(__file__))
 pcr_path = os.path.join(pwd_path, 'pcr.csv')
@@ -195,7 +195,6 @@ def _full_text_extract(addr, lookahead):
             word = addr[i:end_pos]
             word_next = addr[end_pos] if end_pos < len(addr) else ''
 
-            # 优先提取低级别的行政区 (主要是为直辖市和特别行政区考虑)
             if word_next in filter_address_chars:
                 continue
             elif word in region_map:
